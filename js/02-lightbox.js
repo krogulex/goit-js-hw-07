@@ -24,5 +24,8 @@ gallery.innerHTML = galleryCreate
 */
 let lightbox = new SimpleLightbox('.gallery a', { 
     /* options */ 
+    captionsData: "alt",
+    captionDelay: 250,
+    captionPosition: "bottom",
 
 });
