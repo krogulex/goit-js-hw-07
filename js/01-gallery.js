@@ -30,8 +30,18 @@ for (let index = 0; index < galleryItemsNode.length; index++) {
     event.preventDefault();
     const galleryItemLink = galleryItemsNode[index].querySelector('a').href
     
-    basicLightbox.create(`
+    const instance = basicLightbox.create(`
     <img src="${galleryItemLink}" width="800" height="600">
-`).show()
+`   
+)
+instance.show()
+
+if (instance.visible()) {
+    document.addEventListener('keydown', function(event){
+        if(event.key === "Escape"){
+            instance.close()
+        }
+    });
+}
 
     })};
