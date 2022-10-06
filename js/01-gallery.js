@@ -1,13 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-
-
-console.log(galleryItems);
-
 const gallery = document.querySelector('.gallery')
-
-console.log(gallery)
 
 const galleryCreate = 
 galleryItems
@@ -30,11 +24,14 @@ gallery.innerHTML = galleryCreate
 
 const galleryItemsNode = document.querySelectorAll('.gallery__item')
 
-console.log(galleryItemsNode)
-
 for (let index = 0; index < galleryItemsNode.length; index++) {
 
     galleryItemsNode[index].addEventListener('click', (event) => {
     event.preventDefault();
-    console.log('widzisz mnie?')
+    const galleryItemLink = galleryItemsNode[index].querySelector('a').href
+    
+    basicLightbox.create(`
+    <img src="${galleryItemLink}" width="800" height="600">
+`).show()
+
     })};
